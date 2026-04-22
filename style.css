@@ -1,4 +1,4 @@
-/* 基本頁面排版，讓圖片併排顯示 */
+/* 基本頁面排版 */
 body {
     display: flex;
     justify-content: center;
@@ -12,30 +12,53 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%; /* 容器寬度 */
-    gap: 10px;
+    width: 90%; 
+    gap: 15px; /* 增加一點間距 */
 }
 
-/* 1. 左側圖片：圓角 18px，寬度 33%，不失真 */
-.img-rounded {
+/* 圖片包裝容器，方便設定比例 */
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 圖片通用樣式 */
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 1. 左側圖片容器：圓角 18px，寬度 33%，不失真 */
+/* 關鍵：設定為較寬的 16:9 比例 */
+.rounded-no-distortion {
     width: 33%;
-    height: 300px;
+    aspect-ratio: 16 / 9; /* 較寬的比例 */
     border-radius: 18px;
-    object-fit: cover; /* 關鍵：確保不失真 */
+    overflow: hidden; /* 確保圖片不超出圓角 */
+}
+
+.object-cover {
+    object-fit: cover; /* 確保在寬容器中不失真 */
 }
 
 /* 2. 中間圖片：圓形，150x150px，有邊框 */
 .img-circle {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* 圓形 */
-    border: 2px solid #333; /* 加上邊框 */
+    border-radius: 50%;
+    border: 2px solid #333;
     object-fit: cover;
 }
 
-/* 3. 右側圖片：寬度 33%，高度 300px，失真 */
-.img-distorted {
+/* 3. 右側圖片容器：寬度 33%，強制失真 */
+/* 關鍵：設定顯著的高高度以產生 distortion */
+.distorted-taller {
     width: 33%;
-    height: 300px;
+    height: 500px; /* 顯著的高高度 */
+}
+
+.distorted-taller img {
     /* 預設不設定 object-fit，圖片會根據寬高強制拉伸產生 distortion */
+    object-fit: fill; /* 明確設定為 fill (預設值)，確保失真 */
 }
