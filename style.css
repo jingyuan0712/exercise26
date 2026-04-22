@@ -1,0 +1,41 @@
+/* 基本頁面排版，讓圖片併排顯示 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* 容器寬度 */
+    gap: 10px;
+}
+
+/* 1. 左側圖片：圓角 18px，寬度 33%，不失真 */
+.img-rounded {
+    width: 33%;
+    height: 300px;
+    border-radius: 18px;
+    object-fit: cover; /* 關鍵：確保不失真 */
+}
+
+/* 2. 中間圖片：圓形，150x150px，有邊框 */
+.img-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* 圓形 */
+    border: 2px solid #333; /* 加上邊框 */
+    object-fit: cover;
+}
+
+/* 3. 右側圖片：寬度 33%，高度 300px，失真 */
+.img-distorted {
+    width: 33%;
+    height: 300px;
+    /* 預設不設定 object-fit，圖片會根據寬高強制拉伸產生 distortion */
+}
