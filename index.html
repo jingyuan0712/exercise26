@@ -7,36 +7,39 @@
 <style>
 body{
     padding: 40px;
-    font-family: Arial;
+    background-color: #f2f2f2;
 }
 
-/* 排版 */
+/* ⭐ 重點：整排固定寬度 */
 .container{
+    width: 800px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* 左圖（不變形 + 圓角） */
+/* 左圖（正常比例） */
 .img-left{
-    width: 33%;
-    border-radius: 18px;   /* ⭐ 圓角 */
+    width: 250px;
+    height: auto;
+    border-radius: 18px;
 }
 
 /* 中間（圓形） */
 .img-center{
     width: 150px;
     height: 150px;
-    border-radius: 50%;    /* ⭐ 圓形 */
+    border-radius: 50%;
+    object-fit: cover;
     border: 5px solid #ccc;
-    object-fit: cover;     /* ⭐ 不變形 */
 }
 
-/* 右圖（故意變形） */
+/* 右圖（變形） */
 .img-right{
-    width: 33%;
+    width: 250px;
     height: 300px;
-    object-fit: fill;      /* ⭐ distortion */
+    object-fit: fill;
 }
 </style>
 
@@ -46,14 +49,11 @@ body{
 
 <div class="container">
 
-    <!-- 左 -->
-    <img src="https://picsum.photos/400/300" class="img-left">
+<img src="your1.jpg" class="img-left">
 
-    <!-- 中 -->
-    <img src="https://picsum.photos/300/300" class="img-center">
+<img src="your2.jpg" class="img-center">
 
-    <!-- 右 -->
-    <img src="https://picsum.photos/400/300" class="img-right">
+<img src="your3.jpg" class="img-right">
 
 </div>
 
