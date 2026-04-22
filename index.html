@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercise Image</title>
+
+<style>
+body{
+    padding: 40px;
+    font-family: Arial;
+}
+
+/* 排版 */
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 左圖（不變形 + 圓角） */
+.img-left{
+    width: 33%;
+    border-radius: 18px;   /* ⭐ 圓角 */
+}
+
+/* 中間（圓形） */
+.img-center{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;    /* ⭐ 圓形 */
+    border: 5px solid #ccc;
+    object-fit: cover;     /* ⭐ 不變形 */
+}
+
+/* 右圖（故意變形） */
+.img-right{
+    width: 33%;
+    height: 300px;
+    object-fit: fill;      /* ⭐ distortion */
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- 左 -->
+    <img src="https://picsum.photos/400/300" class="img-left">
+
+    <!-- 中 -->
+    <img src="https://picsum.photos/300/300" class="img-center">
+
+    <!-- 右 -->
+    <img src="https://picsum.photos/400/300" class="img-right">
+
+</div>
+
+</body>
+</html>
