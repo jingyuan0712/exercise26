@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Image Styling Practice</title>
+    <title>CSS Image Styling Practice - Corrected</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <img src="https://picsum.photos/id/43/800/800" alt="Eiffel Tower" class="img-rounded">
+        <div class="img-wrapper rounded-no-distortion">
+            <img src="https://picsum.photos/id/43/800/800" alt="Eiffel Tower" class="object-cover">
+        </div>
 
         <img src="https://picsum.photos/id/10/800/800" alt="Mountain Lake" class="img-circle">
 
-        <img src="https://picsum.photos/id/43/800/800" alt="Eiffel Tower" class="img-distorted">
+        <div class="img-wrapper distorted-taller">
+            <img src="https://picsum.photos/id/43/800/800" alt="Eiffel Tower">
+        </div>
     </div>
 
 </body>
